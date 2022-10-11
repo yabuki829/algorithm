@@ -6,12 +6,12 @@
 
 def selection_sort(data):
   for i in range(len(data)):
-    min = data[i]
+    min = i
     for j in range(i+1,len(data)):
-      if min > data[j]:
-        min = data[j]
+      if data[min] > data[j]:
+        min = j
     
-  data[i], min = min, data[i]
+    data[i], data[min] = data[min], data[i]
   return data
 
 data = [40, 70, 60, 90, 20, 80, 30, 10, 50]

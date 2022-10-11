@@ -1,3 +1,9 @@
+#配列の中身を合計する　*試してないけど一次元配列でしか使えない
+
+A = [1,2,3]
+S = sum(A) # -> 6
+
+
 #ユークリッドの互除法
 
 # やり方
@@ -10,7 +16,7 @@ def gcd(a, b):
     r = a % b
     #あまりが0でなければ続ける
     while r != 0:
-        a, b = b, r
+        a, b = b    , r
         r = a % b
 
     return b
@@ -43,3 +49,42 @@ def fibo(N):
 
 
 print(fibo(4))
+
+
+# 素数判定
+# エラトステレスのふるい
+# 整数Nが素数かどうかは,
+# Nが√Nまでの整数で割り切れるかどうかで判定ができる
+
+
+#例)  47が素数かどうか
+# √36 < √47 < √49 -> つまり　6 < √47 < 7
+# √47 = 6.. 
+# 2 ~ 6までの整数で割り切れなければ　"素数"　
+
+import math
+def isPrime_Number(N:int):
+    n = math.floor(math.sqrt(N))
+    result = True
+    for i in range(n-2):
+      if N % (i+2) == 0:
+        #割り切れたら素数じゃない
+        result = False
+        break
+
+    return result
+    
+print(isPrime_Number(47))
+
+
+#　約数を全て出力する
+    
+
+
+
+
+
+
+
+
+
