@@ -78,8 +78,12 @@ print(isPrime_Number(47))
 
 
 # 場合の数
+# 参考一部　https://note.nkmk.me/python-math-factorial-permutations-combinations/
 
 # N個のものを並べる  N! 
+
+
+
 def kaijo(N:int):
     ans = 1
     for i in range(N):
@@ -87,19 +91,65 @@ def kaijo(N:int):
 
     return ans
 
+# mathのfactorialを使う場合
+import math
+math.factorial(5)
+
 
 print(kaijo(5)) # -> 120
 
 
-# N個のものをr個並べる　nPr　
+#順列 
+# N個のものをr個並べる　nPr　 
+# p = N! / (N - r)!
+
+# 例 5個のものを3個並べる
+import math
+N = 5
+r = 3
+p =  math.factorial(N) / math.factorial(N - r)
 
 
-# N個のものをr個選ぶ　nCr
+
+# 文字の組み合わせ
+
+import itertools
+n = ['1', '2', '3', '4']
+# p = itertools.permutations(n, r)  -> n個のものをr個並べる
+
+#n個のものを2個並べる
+# 書き方1 
+for s in itertools.permutations(n, 2):
+    print(s)
+# -> ('1', '2')('1', '3') ...... ('3', '4')
+
+# 書き方2　基本的にはこっちの方が便利
+p_list = list(itertools.permutations(n, 2))
+print(p_list) 
+# ->[('1', '2'), ('1', '3'),......('3', '4')]
+
+
+
+
+# 組み合わせ-----------
+
+#  N個のものをr個選ぶ　nCr
+# 例 5個のものを3個選ぶ
+# c = n! / (r! * (n - r)!)
+
+import math
+N = 5
+r = 3
+c = math.factorial(N) // (math.factorial(N - r) * math.factorial(r))
     
 
+# 4C2 の場合
+for s in itertools.combinations(n, 2):
+    print(s)  #->('1', '2') ,('1', '3')....
 
-
-
+n = ['1', '2', '3', '4']
+c_list = list(itertools.combinations(n, 2))
+# ->[('1', '2'), ('1', '3'),......('3', '4')]
 
 
 
