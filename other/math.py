@@ -77,7 +77,24 @@ def isPrime_Number(N:int):
 print(isPrime_Number(47))
 
 
-#　約数を全て出力する
+# 場合の数
+
+# N個のものを並べる  N! 
+def kaijo(N:int):
+    ans = 1
+    for i in range(N):
+        ans *= i+1
+
+    return ans
+
+
+print(kaijo(5)) # -> 120
+
+
+# N個のものをr個並べる　nPr　
+
+
+# N個のものをr個選ぶ　nCr
     
 
 
