@@ -153,5 +153,17 @@ c_list = list(itertools.combinations(n, 2))
 
 
 
+# 四捨五入
+def round_off(n, digit=0):
+    k = 10 ** digit
+    return (n * k * 2 + 1) // 2 / p
+            
+
+round_off(12.5)       # ->  13.0
+int(round_off(12.5))  # ->  13
 
 
+# ソート
+A = [2,4,1,3,5]
+A.sort() # -> [1,2,3,4,5] 
+A.sort(reverse=True) # -> [5,4,3,2,1] 

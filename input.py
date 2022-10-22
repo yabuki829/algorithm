@@ -42,9 +42,26 @@ data = [list(map(int, input().split())) for i in range(N)]
 
 
 # 文字列をバラバラに配列に入れる
-# apple -> ["a","p","p","l","e"]
 ls = [s for s in input()]
 
+S = "apple"
+ls = [i for i in S]
+# apple -> ["a","p","p","l","e"]
+
+
+
+# 文字の出現回数を調べる
+S = "apple"
+ls = [i for i in S]
+print(ls.count("a"))
+# -> 1
+
+# 整数バージョン
+S = [1,2,2,3,3,4,5]
+ls = [i for i in S]
+print(ls.count(3))
+
+# -> 2
 
 
 

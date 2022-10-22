@@ -16,17 +16,17 @@ for i in range(len(N)):
     break
 
 
+# 配列の前からN番目から　後ろからM番目まで出力する 
+
+# ls_s[( N-1 ):-( M-1 )]
+
+ls_s = [1,2,3,4,5,6,7,8,9,10]
+print(ls_s[1:-1])
+# -> 2,3,4,5,6,7,8,9
 
 
-N = int(input())
+# 文字列Sが配列の中にあるかどうか
 
-a = list(map(int, input().split()))
 
-sum = sum(a)
-ans = 0
-for i in range(N):
-  ans = N % a[i]
-
-print(ans)
 
 
