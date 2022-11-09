@@ -7,14 +7,6 @@
 # ##.
 # ...
 
-   # 3 3 h,w
-# 0 0 スタート y,x
-# 2 0 ゴール  y,x
-# ...
-# ##.
-# ...
-
-
 
 from collections import deque
 h,w = map(int,input().split())

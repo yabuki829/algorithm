@@ -31,6 +31,10 @@ N = int(input())
 s = [input() for i in range(N)]
 i = [int(input()) for i in range(N)]
 
+s = []
+for i in range(N):
+  s.append(input())
+
 #N行に複数の入力
 # N
 #s_1 i_1
