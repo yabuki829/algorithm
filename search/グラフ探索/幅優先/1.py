@@ -3,14 +3,18 @@
 # 3 3 h,w
 # 0 0 スタート y,x
 # 2 0 ゴール  y,x
-# ...
-# ##.
+
+# 123
+# ##4
 # ...
 
 
 from collections import deque
+
 h,w = map(int,input().split())
+# スターとの座標
 sy,sx = map(int,input().split())
+# ゴールの座標
 gy,gx = map(int,input().split())
 # 訪れたかどうかを表す
 visited = [[False for j in range(w)]for i in range (h)]
