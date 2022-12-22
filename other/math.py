@@ -178,3 +178,12 @@ A = sorted(A,key=lambda x: x[1])
 print(A) # -> [ [1,2] , [3,4] , [5,6] ]
 
 
+
+
+# 配列の要素重複を取り除く
+# https://atcoder.jp/contests/abc154/tasks/abc154_c 
+A = [1,2,2,3,4,5,5,6]
+set(A) # -> [1,2,3,4,5,6]
+
+A = ["a","b","c","c"]
+set(A) # -> ["a","b","c"]
