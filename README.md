@@ -1,13 +1,11 @@
-- 入力方法
+- [入力方法](https://github.com/yabuki829/algorithm/blob/master/input.py)
 - 探索
-  - 二分探索
-  - 線形探索
-  - 離散数学
-    - 幅優先探索
-    - 深さ優先探索
+  - [二分探索](https://github.com/yabuki829/algorithm/blob/master/search/binary_search.py)
+  - グラフ探索
+    - [幅優先探索](https://github.com/yabuki829/algorithm/tree/master/search/%E3%82%B0%E3%83%A9%E3%83%95%E6%8E%A2%E7%B4%A2/%E5%B9%85%E5%84%AA%E5%85%88)
+    - [深さ優先探索](https://github.com/yabuki829/algorithm/tree/master/search/%E3%82%B0%E3%83%A9%E3%83%95%E6%8E%A2%E7%B4%A2/%E6%B7%B1%E3%81%95%E5%84%AA%E5%85%88)
 - ソート
-  - バブルソート
-  - 挿入ソート
-  - クイックソート
-  - 選択ソート
-  - シェルソート
+  - [バブルソート](https://github.com/yabuki829/algorithm/blob/master/sort/bubble_sort.py)
+  - [挿入ソート](https://github.com/yabuki829/algorithm/blob/master/sort/insert_sort.py)
+  - [選択ソート](https://github.com/yabuki829/algorithm/blob/master/sort/selection_sort.py)
+
