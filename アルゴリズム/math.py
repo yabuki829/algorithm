@@ -131,10 +131,15 @@ p_list = list(itertools.permutations(n, 2))
 print(p_list) 
 # ->[('1', '2'), ('1', '3'),......('3', '4')]
 
-
+n = 5
+for i in range(n):
+  for j in range(i,n):
+    print(i,j)
+# (0,0),(0,1),(0,2),(0,3),(0,4),(1,1),(1,2)....(4,4)
 
 
 # 組み合わせ-----------
+
 
 #  N個のものをr個選ぶ　nCr
 # 例 5個のものを3個選ぶ
