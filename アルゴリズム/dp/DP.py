@@ -28,9 +28,15 @@ print(dp) # -> [0, 7, 2, 3, 5, 4, 8]
 print(dp[N-1]) # -> 8
 
 # ------------------------------------------------
-# ナップサック問題
+# ナップサック問題2次元DP
 #　問題 https://atcoder.jp/contests/dp/tasks/dp_d
 #  参考 https://www.youtube.com/watch?v=gVJ16ThsJYs
+
+# 4 7
+# 3 13
+# 3 17
+# 5 29
+# 1 10
 
 N,W=map(int, input().split())
 dp=[[0]*(W+1) for i in range(N+1)]

@@ -28,6 +28,9 @@ for i in range(1,N):
 
 print(cost[-1])
 
+
+
+
 # ------------------------------------------------
 # 類問題
 # https://atcoder.jp/contests/dp/tasks/dp_b
