@@ -2,19 +2,19 @@
 # 動的計画法
 # https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_p
 
-# 5 
-# 2 4 1 3
-# 5 3 7  
+# N = 5 
+# a = 2 4 1 3
+# b = 5 3 7  
 N = int(input())
 a = list(map(int, input().split()))
 b = list(map(int, input().split()))
 
-dp = [None] * (N + 1 ) 
+dp = [None] * (N + 1) 
 print(dp)
 dp[1] = 0
 dp[2] = a[0]
 
-
+# 2までdpに入力しているので3スタート
 for i in range(3,N+1):
   # 一個前か
   # 2個前からの移動

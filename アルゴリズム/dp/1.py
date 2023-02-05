@@ -29,6 +29,7 @@ opt[0] = 0
 
 for a in range(1,N+1):
   for c in conins:
+    # a円より小さい場合
     if a >= c:
       opt[a] = min(opt[a-c]+1,opt[a]) 
 

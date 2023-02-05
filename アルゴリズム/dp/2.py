@@ -51,4 +51,22 @@ for i in range(1,N):
     
 print(cost[-1])
 
-print(max(1,2))
+
+# 5 3
+# 10 30 40 50 20
+
+N,K = map(int,input().split())
+cost = [float("inf")]*(N+1)
+
+h = list(map(int,input().split()))
+cost[0] = 0
+
+for i in range(1,N):
+  for k in range(1,K+1):
+    # 移動さき1~kまで
+    if k < len(h):
+      cost[i] = min(cost[i],cost[i-k]+abs(h[i]-h[i-k]))
+
+print(cost)
+print(cost[-1])
+
