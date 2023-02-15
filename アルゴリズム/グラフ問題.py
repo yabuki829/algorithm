@@ -1,1 +1,0 @@
-# https://atcoder.jp/contests/math-and-algorithm/tasks/typical90_bz

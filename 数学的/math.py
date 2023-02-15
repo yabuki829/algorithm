@@ -146,10 +146,14 @@ for i in range(n):
 # c = n! / (r! * (n - r)!)
 
 import math
-N = 5
+n = 5
 r = 3
 c = math.factorial(N) // (math.factorial(N - r) * math.factorial(r))
-    
+
+import math
+def comb(n,r):
+  return math.factorial(n) // (math.factorial(n-r) * math.factorial(r))
+
 
 # 4C2 の場合
 for s in itertools.combinations(n, 2):

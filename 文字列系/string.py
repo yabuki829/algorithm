@@ -31,6 +31,10 @@ print(S.count("ABC")) # -> 1
 
 
 
+# 文字列を反転させる
+S = "ABCDEF"
+s_reverse = S[::-1] # -> FEDCBA
+
 
 
 

@@ -3,12 +3,16 @@
 class unionfind:
 	# 親
 	p = []
+	# 深さ
+	r = []
 	# 頂点の数
 	n = 0
+
 	def __init__(self,n):
 		self.n = n
 		# 最初は親がいないので,-1入れておく
 		self.p = [-1] * (n+1)
+		self.r = [1] * (n+1)
 
 	# xの親を返す
 	def find(self,x):
@@ -24,13 +28,25 @@ class unionfind:
 		x = self.find(x)
 		y  = self.find(y)
 
-		# x,yが同じ親を持っていなければ
-		if x != y :
-			# yの親要素をxに置き換えてます
-			self.p[x] = y
+		# x,yが同じ親を持っていれば統合しない
+		if x == y : return 
+	 
+		# <マージテク>集合をまとめる時に大きい方に小さい方を移動させることでマージさせる
+		# xの深さとyの深さを比べている。
+		if self.r[x] > self.r[y]:
+			x,y = y,x
+		# xとyのrankが同じ時にrankが上がる
+		if self.r[x] == self.r[y]: 
+			# yのrankを更新する　
+			self.r[y] += 1
+		
+		# yの親要素をxに置き換えてます
+		self.p[x] = y
 
 	def same(self,x,y):
 		return   self.find(x) == self.find(y)
+
+	
 
 n,m = map(int,input().split())
 uf = unionfind(n)
