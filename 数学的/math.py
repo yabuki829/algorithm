@@ -4,88 +4,10 @@ A = [1,2,3]
 S = sum(A) # -> 6
 
 
-#ユークリッドの互除法
-
-# やり方
-# 【step1】: aをbで割り，あまりrを求める
-# 【step2】: a, bをb, rでそれぞれ置き換える
-# 【step3】: あまりrが0なら，その時の割る数bが最大公約数で，そうでなければstep1へ戻る
-
-
-def gcd(a, b):
-    r = a % b
-    #あまりが0でなければ続ける
-    while r != 0:
-        a, b = b    , r
-        r = a % b
-
-    return b
-
-num1 = 100
-num2 = 25
-# Greatest Common Diviso 最大公約数
-GCD = gcd(num1, num2)
-
-print(GCD)
-
-
-# フィボナッチ数列
-def fibo(N):
-  a, b = 0, 1
-  array = []
-  while N:
-    N-=1
-    array.append(b)
-    a,b = b, a+b
-    
-  return array
-
-print(fibo(10)) # -> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
-
-# N桁目の数字を返す
-def fobo(N):
-    a,b = 0,1
-    while N-1: 
-        N-=1
-        a,b = b,a+b
-    
-    return b
-
-print(fibo(10)) # -> 89
-
-
-# 素数判定
-# エラトステレスのふるい
-# 整数Nが素数かどうかは,
-# Nが√Nまでの整数で割り切れるかどうかで判定ができる
-
-
-#例)  47が素数かどうか
-# √36 < √47 < √49 -> つまり　6 < √47 < 7
-# √47 = 6.. 
-# 2 ~ 6までの整数で割り切れなければ　"素数"　
-
-import math
-def isPrime_Number(N:int):
-    n = math.floor(math.sqrt(N))
-    result = True
-    for i in range(n-2):
-      if N % (i+2) == 0:
-        #割り切れたら素数じゃない
-        result = False
-        break
-
-    return result
-    
-print(isPrime_Number(47))
-
-
 # 場合の数
 # 参考一部　https://note.nkmk.me/python-math-factorial-permutations-combinations/
 
 # N個のものを並べる  N! 
-
-
 
 def kaijo(N:int):
     ans = 1
@@ -189,10 +111,31 @@ print(A) # -> [ [1,2] , [3,4] , [5,6] ]
 
 
 
+
+
 # 配列の要素重複を取り除く
 # https://atcoder.jp/contests/abc154/tasks/abc154_c 
 A = [1,2,2,3,4,5,5,6]
-set(A) # -> [1,2,3,4,5,6]
+set(A) # -> {1, 2, 3, 4, 5, 6}
 
 A = ["a","b","c","c"]
-set(A) # -> ["a","b","c"]
+list(set(A)) # -> ["a","b","c"]
+
+# 約数列挙 O(√N)で使える
+#参考記事 https://qiita.com/LorseKudos/items/9eb560494862c8b4eb56
+
+def make_divisors(n):
+    lower_divisors , upper_divisors = [], []
+    i = 1
+    while i*i <= n:
+        if n % i == 0:
+            print("割り切れた場合")
+            lower_divisors.append(i)
+            if i != n // i:
+                print("i=",i,"がn//i=",n//2,"と同じでない場合")
+                upper_divisors.append(n//i)
+        i += 1
+    return lower_divisors + upper_divisors[::-1]
+
+make_divisors(2) # -> [1,2]
+

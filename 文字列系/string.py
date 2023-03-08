@@ -35,6 +35,10 @@ print(S.count("ABC")) # -> 1
 S = "ABCDEF"
 s_reverse = S[::-1] # -> FEDCBA
 
+#  出現頻度を調べる
+import collections
+data = ["a","b","c","a"]
 
-
-
+print(collections.Counter(data)) # -> Counter({'a': 2, 'b': 1, 'c': 1})
+c = collections.Counter(data)
+print(c["a"])  # -> 2

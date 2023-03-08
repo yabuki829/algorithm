@@ -12,7 +12,7 @@ class unionfind:
 		self.n = n
 		# 最初は親がいないので,-1入れておく
 		self.p = [-1] * (n+1)
-		self.r = [1] * (n+1)
+		self.r = [-1] * (n+1)
 
 	# xの親を返す
 	def find(self,x):
@@ -42,9 +42,12 @@ class unionfind:
 		
 		# yの親要素をxに置き換えてます
 		self.p[x] = y
+		self.n -= 1
 
 	def same(self,x,y):
 		return   self.find(x) == self.find(y)
+	def size(self,x):
+		return -self.p[self.find(x)]
 
 	
 

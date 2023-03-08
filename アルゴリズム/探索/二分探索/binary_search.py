@@ -1,5 +1,7 @@
 #二分探索
 
+
+# 基本 ------------------------------------------------------------------------
 def binary_search(data, value):
   left = 0            
   right = len(data) - 1
@@ -18,7 +20,7 @@ def binary_search(data, value):
 data = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 print(binary_search(data, 90))
 
-
+# ------------------------------------------------------------------------
 # https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_k
 
 def solve1():
@@ -61,7 +63,7 @@ def solve2():
         print(bisect.bisect_left(A,x))
    
 solve2()
-
+# ------------------------------------------------------------------------
 # bisectを使った二分探索
 import bisect 
 def bisect():
@@ -80,17 +82,18 @@ def bisect():
     bisect.insort_right(A,2)
     bisect.insort(A, 3)
 
-
+# ------------------------------------------------------------------------
 # https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_l
 class Printer:
     # 4 10
     # 1 2 3 4
 
-    # N秒以下か判別する
+    # mid秒以下か判別する
+    # mid秒で何枚印刷されているかを見る
     def check(mid,n,k,A):
         print(mid,"秒")
 
-        # 印刷できる枚数
+        # mid秒で印刷できる枚数
         sum = 0
         for i in range(n):
             sum += mid // A[i]
@@ -109,6 +112,7 @@ class Printer:
 
         while left < right: 
             mid = (left + right) // 2
+            # mid秒までにk枚印刷できるかどうかを確認する
             Answer = Printer.check(mid,n,k,A)
             
             if Answer:
@@ -120,5 +124,22 @@ class Printer:
 Printer.solve()
 
 
-# 尺取り法
+# N以下の数を求める
+# 未満の数字を返すときはleftを返せばok
+A = [1,5,6,7,8,9,10,12]
+
+def cnt(n):
+    left, right = 0,len(A)
+    
+    while right - left > 1:
+        mid = (left + right) // 2
+        if A[mid] <= n:
+            left = mid
+        else:
+            right = mid            
+    return right
+  
+print(cnt(5)) # -> 2
+
+
 
