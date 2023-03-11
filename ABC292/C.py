@@ -16,7 +16,7 @@ for i in range(1,N):
   # ABがiになる組み合わせの個数 
   # CDがN-1になる組み合わせの個数
   # 例) N=4, i=1の場合
-  #     ans+= cnt[1] * cnt[3]  # cnt[1] = ABが1になる組み合わせの個数
+  #     ans+= cnt[1] * cnt[3]  # cnt[1] = ABが1になる組み合わせの個数 
   ans += cnt[i]*cnt[N-i] 
 print(ans)
 
