@@ -37,6 +37,4 @@ dfs(0, 0, visited)
 print(ans)
 
 # 1回目解けなかった。
-
-
 # 再帰　bit全探索 dfs
