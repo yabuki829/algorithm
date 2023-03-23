@@ -11,9 +11,9 @@ A = list(map(int, input().split()))
 # 他のピースも全てx以上であるか
 
 def nibuntansaku(x):
-  print("-----------------------------")
-  print("切れ目の最小値が",x,"だった場合")
-  print("-----------------------------")
+  # print("-----------------------------")
+  # print("切れ目の最小値が",x,"だった場合")
+  # print("-----------------------------")
   # 最後に切った切れ目の長さ
   currnet = 0
   # 現在のピースの数
@@ -21,18 +21,18 @@ def nibuntansaku(x):
   
   for i in range(N):
     if A[i] - currnet >= x:
-      print(i+1,"個目の切れ目できれば",x,"を超えます")
-      print(A[i],"-",currnet, A[i] - currnet)
+      # print(i+1,"個目の切れ目できれば",x,"を超えます")
+      # print(A[i],"-",currnet, A[i] - currnet)
       pieces += 1
       currnet = A[i]
     else:
-      print(i+1,"(",A[i] - currnet,")","コメの切れ目で切ると",x,"を超えません")
+      # print(i+1,"(",A[i] - currnet,")","コメの切れ目で切ると",x,"を超えません")
       pass
 
   if L - currnet >= x:
     pieces += 1
-    print(L - currnet,">=",x,"まだ切れるのでpieaceを増やします")
-  print("最終的なピースの数",pieces)
+  #   print(L - currnet,">=",x,"まだ切れるのでpieaceを増やします")
+  # print("最終的なピースの数",pieces)
 
 
   return pieces
@@ -46,11 +46,11 @@ while right - left > 1:
   if nibuntansaku(middle) >= K + 1:
     # xセンチいじょうのピースを K+1 以上作れたということ
     # 最小値の値の範囲を増やす
-    print("最小値を右に動かします")
+    # print("最小値を右に動かします")
     left = middle
   else:
     # 最小値xセンチを満たす K+1の羊羹は作れない
-    print("最小値を左に動かします")
+    # print("最小値を左に動かします")
     right = middle
     
 
