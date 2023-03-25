@@ -33,5 +33,5 @@ for i in range(H):
     print(A_result[0][i] + A_result[1][j] - A[i][j],end=" ")
   print()
 
-# 計算結果　
-# 星2 199~399 
+# 計算結果　前処理
+# 星2 199~399  
