@@ -13,8 +13,7 @@ for _ in range(q):
   # 一個次
   nxt = A[index]
   # 一個前
-  prev = A[index-1]
-
+  prev = A[index-1] 
   print(min(nxt - b, b - prev))
 
 
