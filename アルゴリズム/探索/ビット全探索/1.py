@@ -1,17 +1,17 @@
 
 
-# from itertools import product
-# A = [1, 2, 3, 4]
-# n = len(A)
-# for bits in product([0, 1], repeat=n):
-#     select = []
-#     # print("bits: ", bits)
+from itertools import product
+A = [1, 2, 3, 4]
+n = len(A)
+for bits in product([0, 1], repeat=n):
+    select = []
+    # print("bits: ", bits)
     
-#     for i in range(len(A)):
-#       if bits[i] == 0:
-#         select.append(A[i])
+    for i in range(len(A)):
+      if bits[i] == 0:
+        select.append(A[i])
     
-#     print(select)
+    print(select)
 
 
 # https://atcoder.jp/contests/abc128/tasks/abc128_c

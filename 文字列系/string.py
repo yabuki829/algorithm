@@ -42,3 +42,10 @@ data = ["a","b","c","a"]
 print(collections.Counter(data)) # -> Counter({'a': 2, 'b': 1, 'c': 1})
 c = collections.Counter(data)
 print(c["a"])  # -> 2
+
+# アルファベット数字変換
+print(ord("A")) # => 65 
+print(chr(65) ) # => A
+
+print(ord("a")) # => 97
+print(chr(97) ) # => a
