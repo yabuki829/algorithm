@@ -29,3 +29,4 @@ for i in range(N):
     now = s[i][1]
     
 print(count)
+

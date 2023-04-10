@@ -1,10 +1,8 @@
 #ユークリッドの互除法
-
 # やり方
 # 【step1】: aをbで割り，あまりrを求める
 # 【step2】: a, bをb, rでそれぞれ置き換える
 # 【step3】: あまりrが0なら，その時の割る数bが最大公約数で，そうでなければstep1へ戻る
-
 
 def gcd(a, b):
     r = a % b
@@ -21,3 +19,6 @@ num2 = 25
 GCD = gcd(num1, num2)
 
 print(GCD)
+
+import math
+print(math.lcm(24,30,168)) # -> 1

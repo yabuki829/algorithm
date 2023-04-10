@@ -2,7 +2,7 @@
 # Union-Find 木
 class unionfind:
 	# 親
-	p = []
+	parent = []
 	# 深さ
 	r = []
 	# 頂点の数
@@ -11,17 +11,17 @@ class unionfind:
 	def __init__(self,n):
 		self.n = n
 		# 最初は親がいないので,-1入れておく
-		self.p = [-1] * (n+1)
+		self.parent = [-1] * (n+1)
 		self.r = [-1] * (n+1)
 
 	# xの親を返す
 	def find(self,x):
 		# 自分が親であればxを返す
-		if self.p[x] == -1 :return x
+		if self.parent[x] == -1 :return x
 		else:
 			# 親要素を辿る
-			self.p[x] = self.find(self.p[x])
-			return self.p[x]
+			self.parent[x] = self.find(self.parent[x])
+			return self.parent[x]
 
 	# 結合する
 	def unite(self,x,y):
@@ -41,13 +41,13 @@ class unionfind:
 			self.r[y] += 1
 		
 		# yの親要素をxに置き換えてます
-		self.p[x] = y
+		self.parent[x] = y
 		self.n -= 1
 
 	def same(self,x,y):
 		return   self.find(x) == self.find(y)
 	def size(self,x):
-		return -self.p[self.find(x)]
+		return -self.parent[self.find(x)]
 
 	
 
