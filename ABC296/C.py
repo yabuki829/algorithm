@@ -8,12 +8,16 @@ A = list(map(int,input().split()))
 
 
 s = set(A)
-
+# print(s)
 for i in range(n):
     # A[i] - A[j] == x
-    # A[i] - x == A[j] 
+    # (1) A[i] - x == A[j] 
+    #     A[i] - x　が Aの中に含まれてればok
+
     if A[i] - x in s:
         print("Yes")
-        exit()
+        exit()  
 
 print("No")
+
+# 含まれているか問題はsetを使う  

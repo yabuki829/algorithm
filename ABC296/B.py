@@ -1,6 +1,12 @@
 S = [input() for _ in range(8)]
 
 
+#  abcd...
+# 9
+# 8
+# 7
+# 6
+
 # ........
 # ........
 # ........
@@ -11,13 +17,11 @@ S = [input() for _ in range(8)]
 # ........
 
 x = ["a","b","c","d","e","f","g","h"]
-y = [8,7,6,5,4,3,2,1]
 ans = ""
 for i in range(8):
   for j in range(8):
-  
     if S[i][j] == "*":
-      ans += str(x[j]) + str(y[i])
+      ans += str(x[j]) + str(8-i)
       break
 print(ans)
       
