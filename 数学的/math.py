@@ -139,3 +139,37 @@ def make_divisors(n):
 
 make_divisors(2) # -> [1,2]
 
+# 左回転90度回転
+import numpy as np
+# 入力
+A = [[0,1,2],[3,4,5],[6,7,8]]
+# NumPy配列への変換
+# A = np.array(A)
+print(np.rot90(A))
+
+# 90度右回転
+# 1. 上下逆転
+# 2. 列と行の入れ替え
+def rotete90(A):
+  # print("回転します")
+  A = A[::-1]
+  routate_A = []
+  for x in zip(*A):
+    routate_A.append(x)
+  return  routate_A
+rotete90(A)
+
+# 180度回転
+# 1. 左右逆
+# 2. 上下逆
+
+def rotete180(A):
+    routate_A = []
+    for x in A[::-1]:
+        print(x)
+        routate_A.append(x)
+    return routate_A
+    
+
+
+
