@@ -1,5 +1,21 @@
 n = int(input())
 A = list(map(int,input().split()))
 
-# dp[i][poz] i個目まで食べ物が出てきて、pozは今、毒状態かどうか　= 食べた料理の美味しさの総和
-# 二次元DP
+
+count = [0] * (n + 1)
+
+ans = []
+
+# print(A)
+for i in range(n*3):
+  count[A[i]] += 1
+  if count[A[i]] == 2:
+    ans.append(A[i])
+
+  if len(ans) == n:
+    break
+
+print(*ans)
+
+# 通った
+# たまたま？

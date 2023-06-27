@@ -1,3 +1,4 @@
+# https://atcoder.jp/contests/abc306/tasks/abc306_b
 A = list(map(int,input().split()))
 
 ans = 0
