@@ -152,78 +152,52 @@ class SortedMultiset(Generic[T]):
 
 n,k,q = map(int,input().split())
 
-
-mset_A = SortedMultiset()
-mset_B = SortedMultiset()
+# 集合A 
+Greater_A = SortedMultiset()
+# 酒豪B
+Lesser_B = SortedMultiset()
 
 for i in range(n):
   if i < k:
-    mset_A.add(0)
+    Greater_A.add(0)
   else:
-    mset_B.add(0)
-
-
-# 
+    Lesser_B.add(0)
+ans = 0
 A = [0] * n
-for i in range(q):
+for _ in range(q):
   x,y = map(int,input().split())
-  # A[x-1] 番目のものを集合Aから取り除いて集合Bに入れる
-  # yを集合Aに入れる
-
-  if mset_A.discard(A[x-1]) != True:
-     mset_B.discard(A[x-1])
-  mset_A.add(y)
+  preA = A[x-1]
+  A[x-1] = y
   
-  A[x-1]  = y
-  # 集合Aの一番小さい値より集合Bの一番大きな値が大きければ入れ替える
-  if mset_A[0] < mset_B[-1] and len(mset_A) == 2:
-    rm = mset_B[-1]
-    # print(rm,"入れ替えます")
-    mset_A.add(rm)
-    mset_B.discard(rm)
-    
-
-  # 集合Aの数がkを超えたら、一番小さい値をBに入れる
+  if Greater_A.discard(preA) == False: 
+    Lesser_B.discard(preA)
+  if len(Greater_A) < k:
+    Greater_A.add(y)
+  else:
+    # とりあえず集合Aに入れて、その後に集合Aの最小値を取り出して集合Bに入れる
+    Greater_A.add(y)
+    Lesser_B.add(Greater_A[0])
+    Greater_A.discard(Greater_A[0])
   
-  if len(mset_A) > k:
-    # print("kを超えた")
-    rm = mset_A[0]
-    # print(rm,"を削除します")
-    mset_B.add(rm)
-    mset_A.discard(rm)
-    
-  if len(mset_A) < k:
-    # print("kを下回った",mset_A)
-    ad = mset_B[-1]
-    # print(ad,"を足します")
-    mset_A.add(ad)
-    mset_B.discard(ad)
+  if Greater_A[0] < Lesser_B[-1]:
+    # print("Bに大きい値があります")
+    min_A = Greater_A[0]
+    max_B = Lesser_B[-1]
+    Greater_A.add(max_B)
+    Lesser_B.add(min_A)
+    Greater_A.discard(min_A)
+    Lesser_B.discard(max_B)
+#   print("-----------------------------------")
+#   print(A)
+#   print(Greater_A,Lesser_B)
+  print(sum(Greater_A))
 
-  if len(mset_A) == k:
-    # print("問題なし")
-    pass
+
+ 
   
-  # print(A)
-  # print(mset_A,mset_B,"最大は",sum(mset_A))
-  # print("--------------------------------------")
-  print(sum(mset_A))
 
 
 
-
-
-
-
-
-
-# 長さNのA[]が与えられる
-# 
-# f():
-#   Aを降順にソートしたものをBとし
-#   f(A) = B1 + B2 + Bk とする
-
-# Q回行う
-# A[x] = y
 
 
 # [5, 0, 0, 0] -> 5
